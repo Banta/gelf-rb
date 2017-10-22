@@ -27,24 +27,24 @@ module GELF
   include Levels
 
   # Maps Ruby Logger levels to syslog levels as SyslogLogger and syslogger gems. This one is default.
-  LOGGER_MAPPING = {DEBUG   => 7, # Debug
-                    INFO    => 6, # Informational
-                    WARN    => 5, # Notice
-                    ERROR   => 4, # Warning
-                    FATAL   => 3, # Error
-                    UNKNOWN => 1} # Alert – shouldn't be used
+  LOGGER_MAPPING = {DEBUG   => 'debug', # Debug
+                    INFO    => 'info', # Informational
+                    WARN    => 'warn', # Notice
+                    ERROR   => 'error', # Warning
+                    FATAL   => 'fatal', # Error
+                    UNKNOWN => 'unknown'} # Alert – shouldn't be used
 
   # Maps Syslog or Ruby Logger levels directly to standard syslog numerical severities.
-  DIRECT_MAPPING = {DEBUG         => 7, # Debug
-                    INFORMATIONAL => 6, # Informational (syslog source)
-                    INFO          => 6, # Informational (Logger source)
-                    NOTICE        => 5, # Notice
-                    WARNING       => 4, # Warning (syslog source)
-                    WARN          => 4, # Warning (Logger source)
-                    ERROR         => 3, # Error
-                    CRITICAL      => 2, # Critical (syslog source)
-                    FATAL         => 2, # Critical (Logger source)
-                    ALERT         => 1, # Alert (syslog source)
-                    UNKNOWN       => 1, # Alert - shouldn't be used (Logger source)
-                    EMERGENCY     => 0} # Emergency (syslog source)
+  DIRECT_MAPPING = {DEBUG         => 'debug', # Debug
+                    INFORMATIONAL => 'info', # Informational (syslog source)
+                    INFO          => 'info', # Informational (Logger source)
+                    NOTICE        => 'notice', # Notice
+                    WARNING       => 'warn', # Warning (syslog source)
+                    WARN          => 'warn', # Warning (Logger source)
+                    ERROR         => 'error', # Error
+                    CRITICAL      => 'critical', # Critical (syslog source)
+                    FATAL         => 'critical', # Critical (Logger source)
+                    ALERT         => 'alert', # Alert (syslog source)
+                    UNKNOWN       => 'alert', # Alert - shouldn't be used (Logger source)
+                    EMERGENCY     => 'emergency'} # Emergency (syslog source)
 end
